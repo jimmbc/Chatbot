@@ -10,13 +10,17 @@ public class Invenhollbot extends TelegramLongPollingBot {
 
         SendMessage message = new SendMessage();
         String command=update.getMessage().getText();
-        if (command.equals("/saludame")){
+        if (command.equals("/comenzar")){
             System.out.println(update.getMessage().getFrom().getFirstName());
-            message.setText("Hola "+update.getMessage().getFrom().getFirstName()+ " me alegra poder ayudarte");
+            message.setText("Hola "+update.getMessage().getFrom().getFirstName()+ "hoy sere tu asistente, selecciona una opcion por favor");
+        }
+        if (command.equals("/ubicar")){
+            System.out.println(update.getMessage().getFrom().getFirstName());
+            message.setText("espera un momento "+update.getMessage().getFrom().getFirstName()+ "estamos buscando...");
         }
         message.setChatId(update.getMessage().getChatId());
         try {
-            execute(message);
+            execute(message);   //se envia el mensaje
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
