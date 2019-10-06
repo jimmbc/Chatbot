@@ -12,7 +12,7 @@ public class Invenhollbot extends TelegramLongPollingBot {
         String command=update.getMessage().getText();
         if (command.equals("/comenzar")){
             System.out.println(update.getMessage().getFrom().getFirstName());
-            message.setText("Hola "+update.getMessage().getFrom().getFirstName()+ "hoy sere tu asistente, selecciona una opcion por favor");
+            message.setText("Hola"+ update.getMessage().getFrom().getFirstName()+ "hoy sere tu asistente, selecciona una opcion por favor");
         }
         if (command.equals("/ubicar")){
             System.out.println(update.getMessage().getFrom().getFirstName());
